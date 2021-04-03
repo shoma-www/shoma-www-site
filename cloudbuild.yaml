@@ -6,5 +6,18 @@ steps:
       '-f', 'docker/dockerfile',
       '.'
     ]
+
   - name: 'gcr.io/cloud-builders/docker'
     args: ['push', 'gcr.io/shoma-www-site/web']
+
+  - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
+    entrypoint: gcloud
+    args: [
+      'run', 'deploy', 'shoma-www-site',
+      '--image', 'gcr.io/shoma-www-site/web',
+      '--region', 'asia-northeast1-a',
+      '--platform', 'managed'
+    ]
+
+images:
+- gcr.io/shoma-www-site/web
