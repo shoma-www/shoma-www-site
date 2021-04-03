@@ -14,10 +14,12 @@ steps:
     entrypoint: gcloud
     args: [
       'run', 'deploy', 'shoma-www-site',
-      '--image', 'gcr.io/shoma-www-site/web',
-      '--region', 'asia-northeast1-a',
+      '--project', 'shoma-www-site',
+      '--region', 'asia-northeast1',
+      '--image', 'gcr.io/shoma-www-site/web:latest',
+      '--memory', '512',
       '--platform', 'managed'
     ]
 
 images:
-- gcr.io/shoma-www-site/web
+- 'gcr.io/shoma-www-site/web'
