@@ -7,4 +7,5 @@ docker/*
 # files
 .gitignore
 docker-compose.yml
+cloudbuild.yaml
 README.md
