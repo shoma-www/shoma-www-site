@@ -17,6 +17,7 @@ steps:
       '--project', 'shoma-www-site',
       '--region', 'asia-northeast1',
       '--image', 'gcr.io/shoma-www-site/web:latest',
+      '--service-account', 'shoma-www-site-run@shoma-www-site.iam.gserviceaccount.com',
       '--memory', '512',
       '--platform', 'managed'
     ]
