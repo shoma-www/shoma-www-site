@@ -7,4 +7,5 @@ WORKDIR /code
 COPY . /code
 
 EXPOSE 8080
-CMD ["aleph", "start"]
+# 暫定対応
+CMD ["aleph", "dev"]
