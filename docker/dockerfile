@@ -6,4 +6,5 @@ RUN deno install --unstable -A -f -n aleph https://deno.land/x/aleph@v0.3.0-alph
 WORKDIR /code
 COPY . /code
 
+EXPOSE 8080
 CMD ["aleph", "start"]
