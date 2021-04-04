@@ -11,11 +11,3 @@ services:
       - "8080:8080"
     volumes:
       - .:/code
-      - aleph:/code/.aleph
-      - deno_bin:$HOME/.deno/bin
-      - deno_cache:$HOME/.cache/deno
-
-volumes:
-  aleph:
-  deno_bin:
-  deno_cache:
