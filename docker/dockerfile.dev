@@ -1,6 +1,6 @@
 FROM hayd/deno:ubuntu-1.8.2
 
 RUN apt-get update
-RUN deno install --unstable -A -f -n aleph https://deno.land/x/aleph@v0.3.0-alpha.24/cli.ts
+RUN deno install --unstable -A -f -n aleph https://deno.land/x/aleph@v0.3.0-alpha.25/cli.ts
 
 WORKDIR /code
