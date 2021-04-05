@@ -1,26 +1,12 @@
 steps:
-  - name: 'gcr.io/cloud-builders/docker'
+  - name: 'hayd/deno:ubuntu-1.8.2'
     args: [
-      'build',
-      '-t', 'gcr.io/shoma-www-site/web',
-      '-f', 'docker/dockerfile',
-      '.'
+      'deno', 'run',
+      '--unstable',
+      '-A',
+      'https://deno.land/x/aleph@v0.3.0-alpha.25/cli.ts',
+      build
     ]
 
-  - name: 'gcr.io/cloud-builders/docker'
-    args: ['push', 'gcr.io/shoma-www-site/web']
-
-  - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
-    entrypoint: gcloud
-    args: [
-      'run', 'deploy', 'shoma-www-site',
-      '--project', 'shoma-www-site',
-      '--region', 'asia-northeast1',
-      '--image', 'gcr.io/shoma-www-site/web:latest',
-      '--service-account', 'shoma-www-site-run@shoma-www-site.iam.gserviceaccount.com',
-      '--memory', '512',
-      '--platform', 'managed'
-    ]
-
-images:
-- 'gcr.io/shoma-www-site/web'
+  - name: 'gcr.io/$PROJECT_ID/firebase'
+    args: ['deploy']
