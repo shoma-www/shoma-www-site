@@ -1,5 +1,13 @@
 {
+  "files.exclude": {
+    "**/.aleph": true,
+    "**/dist": true
+  },
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "denoland.vscode-deno",
   "deno.enable": true,
   "deno.unstable": true,
+  "deno.lint": true,
+  "deno.suggest.autoImports": true,
   "deno.importMap": "./import_map.json"
 }
