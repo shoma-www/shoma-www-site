@@ -1,25 +1,41 @@
-import { useDeno } from 'framework/react'
-import React from 'react'
+import React, { useState } from "react";
+import Navbar from "../components/organisms/navbar.tsx";
+import Section from "../components/organisms/section.tsx";
+import Toggle from "../components/molecules/toggle.tsx";
 
 export default function Home() {
-  const version = useDeno(() => Deno.version.deno)
-
+  const [open, setOpen] = useState(false);
   return (
-    <div className="page">
+    <>
       <head>
-        <title>Hello World - Aleph.js</title>
+        <title>Shoma's Home</title>
       </head>
-      <h1>Welcome to use <strong>Aleph.js</strong>!</h1>
-      <p className="links">
-        <a href="https://alephjs.org" target="_blank">Website</a>
-        <span></span>
-        <a href="https://alephjs.org/docs/get-started" target="_blank">Get Started</a>
-        <span></span>
-        <a href="https://alephjs.org/docs" target="_blank">Docs</a>
-        <span></span>
-        <a href="https://github.com/alephjs/aleph.js" target="_blank">Github</a>
-      </p>
-      <p className="copyinfo">Built by Aleph.js in Deno {version}</p>
-    </div>
-  )
+
+      <header className="w-screen h-screen p-8 flex justify-start items-center">
+        <h1 id="top">
+          <div className="text-6xl font-semibold">Shoma's</div>
+          <div className="text-6xl font-semibold">Home</div>
+        </h1>
+      </header>
+
+      <Toggle open={open} onClick={() => setOpen(!open)} />
+      <Navbar open={open} />
+
+      <Section id="about" title="About">
+        <div>
+          shoma-wwwの説明 githubのリポジトリのページとか
+        </div>
+      </Section>
+      <Section id="skill" title="Skill">
+        <div>
+          スキルの説明
+        </div>
+      </Section>
+      <Section id="work" title="Work">
+        <div>
+          つくったやつの説明 ないけど
+        </div>
+      </Section>
+    </>
+  );
 }

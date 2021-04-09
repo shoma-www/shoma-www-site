@@ -1,7 +1,11 @@
-import React, { ComponentType } from 'react'
-import 'tailwind'
+import React, { ComponentType } from "react";
+import "tailwind";
+import "./style/index.css";
 
-export default function App({ Page, pageProps }: { Page: ComponentType<any>, pageProps: any }) {
+export default function App(
+  // deno-lint-ignore no-explicit-any
+  { Page, pageProps }: { Page: ComponentType<any>; pageProps: any },
+) {
   return (
     <main>
       <head>
@@ -9,5 +13,5 @@ export default function App({ Page, pageProps }: { Page: ComponentType<any>, pag
       </head>
       <Page {...pageProps} />
     </main>
-  )
+  );
 }

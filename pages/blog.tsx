@@ -1,6 +1,9 @@
-import React, { ComponentType } from 'react'
+import React, { ComponentType } from "react";
 
-export default function Blog({ Page }: { Page: ComponentType<any> & { meta: { title: string}} }) {
+export default function Blog(
+  // deno-lint-ignore no-explicit-any
+  { Page }: { Page: ComponentType<any> & { meta: { title: string } } },
+) {
   return (
     <div>
       <div className="content">
@@ -8,5 +11,5 @@ export default function Blog({ Page }: { Page: ComponentType<any> & { meta: { ti
         {Page && <Page />}
       </div>
     </div>
-  )
+  );
 }

@@ -1,0 +1,41 @@
+* {
+  font-family: YuMincho, 'Yu Mincho', serif;
+  color: #708090;
+}
+
+@keyframes fade_in_anime {
+  from {
+    bottom: -110%;
+  }
+  30% {
+    bottom: -30%;
+  }
+  to {
+    bottom: 0;
+  }
+}
+
+.fade-in {
+  animation-duration: 500ms;
+  animation-name: fade_in_anime;
+  animation-iteration-count: 1;
+}
+
+@keyframes fade_out_anime {
+  from {
+    bottom: 0;
+  }
+  70% {
+    bottom: -30%;
+  }
+  to {
+    bottom: -110%;
+  }
+}
+
+.fade-out {
+  animation-duration: 500ms;
+  animation-name: fade_out_anime;
+  animation-iteration-count: 1;
+  bottom: -100%;
+}
