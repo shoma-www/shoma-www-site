@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Navbar from "../components/organisms/navbar.tsx";
-import Section from "../components/organisms/section.tsx";
-import Toggle from "../components/molecules/toggle.tsx";
+import Section from "../components/molecules/section.tsx";
+import Toggle from "../components/organisms/toggle.tsx";
 
 export default function Home() {
   const [open, setOpen] = useState(false);
