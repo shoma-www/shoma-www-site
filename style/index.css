@@ -39,3 +39,43 @@
   animation-iteration-count: 1;
   bottom: -100%;
 }
+
+.border-gray-theme {
+  border-color: #708090;
+}
+
+.balloon-left {
+  position: relative;
+  background: #FFF;
+  border-width: 2px;
+  border-radius: 0.375rem;
+  border-color: #708090;
+  margin-left: 1.5rem;
+  padding: 1rem;
+}
+
+.balloon-left:before {
+  content: '';
+  position: absolute;
+  display: block;
+  width: 0;
+  height: 0;
+  left: -14px;
+  top: 16px;
+  border-right: 14px solid #708090;
+  border-top: 14px solid transparent;
+  border-bottom: 14px solid transparent;
+}
+
+.balloon-left::after{
+  content: '';
+  position: absolute;
+  display: block;
+  width: 0;
+  height: 0;
+  left: -11px;
+  top: 16px;
+  border-right: 14px solid #FFF;
+  border-top: 14px solid transparent;
+  border-bottom: 14px solid transparent;
+}

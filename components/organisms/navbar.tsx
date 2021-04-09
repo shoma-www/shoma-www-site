@@ -9,6 +9,7 @@ export default function Navbar({ open }: { open: boolean }) {
     >
       <ul className="flex justify-between">
         <NavLink href="#about" name="About" />
+        <NavLink href="#history" name="History" />
         <NavLink href="#skill" name="Skil" />
         <NavLink href="#work" name="Work" />
         <NavLink href="./blog" name="Blog" />

@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Navbar from "../components/organisms/navbar.tsx";
 import Section from "../components/molecules/section.tsx";
 import Toggle from "../components/organisms/toggle.tsx";
+import History from "../components/organisms/history.tsx";
 
 export default function Home() {
   const [open, setOpen] = useState(false);
@@ -25,22 +26,40 @@ export default function Home() {
 
       <Section id="about" title="About">
         <div>
-          shoma-wwwの説明 githubのリポジトリのページとか
+          <div className="mb-2">
+            <span className="mr-2">name:</span>
+            <span className="font-bold">shoma-www</span>
+          </div>
+          <p className="mb-4">
+            労働からはじめたバックエンドエンジニアもどき。<br />
+            ２日前のことはだいたい忘れてます。
+          </p>
         </div>
       </Section>
+
+      <Section id="history" title="History">
+        <div>
+          <div className="mb-4">
+            いきてきたヒストリー
+          </div>
+          <History />
+        </div>
+      </Section>
+
       <Section id="skill" title="Skill">
         <div>
           スキルの説明
         </div>
       </Section>
+
       <Section id="work" title="Work">
         <div>
           つくったやつの説明 ないけど
         </div>
       </Section>
 
-      <footer className="text-center bg-gray-50">
-        © 2021 shoma-www
+      <footer className="text-center bg-gray-50 py-1">
+        ©2021 shoma-www
       </footer>
     </>
   );
