@@ -11,7 +11,9 @@ export default function Home() {
         <title>Shoma's Home</title>
       </head>
 
-      <header className="w-screen h-screen p-8 flex justify-start items-center">
+      <header
+        className="w-screen h-screen bg-gray-50 p-8 flex justify-start items-center"
+      >
         <h1 id="top">
           <div className="text-6xl font-semibold">Shoma's</div>
           <div className="text-6xl font-semibold">Home</div>
@@ -36,6 +38,10 @@ export default function Home() {
           つくったやつの説明 ないけど
         </div>
       </Section>
+
+      <footer className="text-center bg-gray-50">
+        © 2021 shoma-www
+      </footer>
     </>
   );
 }
