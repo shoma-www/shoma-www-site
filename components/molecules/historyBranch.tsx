@@ -9,7 +9,7 @@ export default function HistoryBranch(
     <li>
       <Point className="top-12 right-7" />
       <Balloon>
-        <div className="">{date}</div>
+        <div className="font-semibold">{date}</div>
         {children}
       </Balloon>
     </li>
