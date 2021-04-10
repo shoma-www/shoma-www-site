@@ -22,39 +22,41 @@ export default function Home() {
 
       <Navbar open={open} onClick={() => setOpen(!open)} />
 
-      <Section id="about" title="About">
-        <div>
-          <div className="mb-2">
-            <span className="mr-2">name:</span>
-            <span className="font-bold">shoma-www</span>
+      <div className="max-w-3xl mx-auto">
+        <Section id="about" title="About">
+          <div>
+            <div className="mb-2">
+              <span className="mr-2">name:</span>
+              <span className="font-bold">shoma-www</span>
+            </div>
+            <p className="mb-4">
+              労働からはじめたバックエンドエンジニアもどき。<br />
+              ２日前のことはだいたい忘れてます。
+            </p>
           </div>
-          <p className="mb-4">
-            労働からはじめたバックエンドエンジニアもどき。<br />
-            ２日前のことはだいたい忘れてます。
-          </p>
-        </div>
-      </Section>
+        </Section>
 
-      <Section id="history" title="History">
-        <div>
-          <div className="mb-4">
-            いきてきたヒストリー
+        <Section id="history" title="History">
+          <div>
+            <p className="mb-4">
+              いきてきたヒストリー
+            </p>
+            <History />
           </div>
-          <History />
-        </div>
-      </Section>
+        </Section>
 
-      <Section id="skill" title="Skill">
-        <div>
-          スキルの説明
-        </div>
-      </Section>
+        <Section id="skill" title="Skill">
+          <div>
+            スキルの説明
+          </div>
+        </Section>
 
-      <Section id="work" title="Work">
-        <div>
-          つくったやつの説明 ないけど
-        </div>
-      </Section>
+        <Section id="work" title="Work">
+          <div>
+            つくったやつの説明 ないけど
+          </div>
+        </Section>
+      </div>
 
       <footer className="text-center bg-gray-50 py-1">
         ©2021 shoma-www
