@@ -9,7 +9,12 @@ export default function Navbar({ open }: { open: boolean }) {
     >
       <ul className="flex justify-between">
         <NavLink href="#about" name="About" icon="person" />
-        <NavLink href="#history" name="History" icon="history" />
+        <NavLink
+          href="#history"
+          className="hidden md:inline-block"
+          name="History"
+          icon="history"
+        />
         <NavLink href="#skill" name="Skil" icon="psychology" />
         <NavLink href="#work" name="Work" icon="work" />
         <NavLink href="./blog" name="Blog" icon="article" />

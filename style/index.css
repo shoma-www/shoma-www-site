@@ -79,3 +79,7 @@
   border-top: 14px solid transparent;
   border-bottom: 14px solid transparent;
 }
+
+.material-icons.md-36 {
+  font-size: 36px;
+}
