@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import Navbar from "../components/organisms/navbar.tsx";
 import Section from "../components/molecules/section.tsx";
-import Toggle from "../components/organisms/toggle.tsx";
 import History from "../components/organisms/history.tsx";
 
 export default function Home() {
@@ -21,8 +20,7 @@ export default function Home() {
         </h1>
       </header>
 
-      <Toggle open={open} onClick={() => setOpen(!open)} />
-      <Navbar open={open} />
+      <Navbar open={open} onClick={() => setOpen(!open)} />
 
       <Section id="about" title="About">
         <div>
