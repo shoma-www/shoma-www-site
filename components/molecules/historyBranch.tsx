@@ -1,9 +1,9 @@
-import React, { ReactNode } from "react";
+import React, { PropsWithChildren } from "react";
 import Balloon from "../atoms/balloon.tsx";
 import Point from "../atoms/point.tsx";
 
 export default function HistoryBranch(
-  { date, children }: { date: string; children: ReactNode },
+  { date, children }: PropsWithChildren<{ date: string }>,
 ) {
   return (
     <li>

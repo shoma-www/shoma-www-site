@@ -1,7 +1,7 @@
-import React, { ReactNode } from "react";
+import React, { PropsWithChildren } from "react";
 
 export default function Section(
-  { id, title, children }: { id: string; title: string; children: ReactNode },
+  { id, title, children }: PropsWithChildren<{ id: string; title: string }>,
 ) {
   return (
     <section id={id} className="w-screen p-8 mb-6">
