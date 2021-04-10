@@ -5,7 +5,7 @@ export default function Toggle(
 ) {
   return (
     <div
-      className="fixed z-10 right-10 bottom-20 cursor-pointer"
+      className="lg:hidden fixed z-10 right-10 bottom-20 cursor-pointer"
       onClick={onClick}
     >
       {!open && <span className="animate-pulse text-4xl">丸</span>}

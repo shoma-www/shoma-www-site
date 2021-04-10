@@ -2,10 +2,10 @@ import React from "react";
 import NavLink from "../atoms/navlink.tsx";
 
 export default function Navbar({ open }: { open: boolean }) {
-  const fadeClassName = open ? "fade-in" : "fade-out";
+  const isShow = open ? "is-show" : "";
   return (
     <nav
-      className={`w-screen fixed z-10 left-0 bottom-0 px-10 py-4 bg-gray-50 bg-opacity-75 ${fadeClassName}`}
+      className={`w-screen fixed z-10 px-10 py-4 bg-gray-50 bg-opacity-75 nav ${isShow}`}
     >
       <ul className="flex justify-between">
         <NavLink href="#about" name="About" icon="person" />

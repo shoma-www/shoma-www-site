@@ -3,41 +3,26 @@
   color: #708090;
 }
 
-@keyframes fade_in_anime {
-  from {
-    bottom: -110%;
-  }
-  30% {
-    bottom: -30%;
-  }
-  to {
-    bottom: 0;
-  }
-}
+.nav {
+  transition-property: bottom;
+  transition-duration: 500ms;
+  transition-timing-function: ease-in-out;
 
-.fade-in {
-  animation-duration: 500ms;
-  animation-name: fade_in_anime;
-  animation-iteration-count: 1;
-}
-
-@keyframes fade_out_anime {
-  from {
-    bottom: 0;
-  }
-  70% {
-    bottom: -30%;
-  }
-  to {
-    bottom: -110%;
-  }
-}
-
-.fade-out {
-  animation-duration: 500ms;
-  animation-name: fade_out_anime;
-  animation-iteration-count: 1;
   bottom: -100%;
+}
+
+.nav.is-show {
+  bottom: 0%
+}
+
+@media (min-width: 1024px) {
+  .nav {
+    bottom: auto;
+    top: 0;
+  }
+  .nav.is-show {
+    bottom: auto!important;
+  }
 }
 
 .border-gray-theme {
