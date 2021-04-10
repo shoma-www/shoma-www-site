@@ -12,8 +12,8 @@ export default function Toggle(
       className={`cursor-pointer ${className}`}
       onClick={onClick}
     >
-      {!open && <span className="animate-pulse text-4xl">丸</span>}
-      {open && <span className="animate-pulse text-4xl">罰</span>}
+      {!open && <span className="animate-pulse text-4xl">開</span>}
+      {open && <span className="animate-pulse text-4xl">閉</span>}
     </div>
   );
 }
