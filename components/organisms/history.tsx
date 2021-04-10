@@ -6,10 +6,9 @@ export default function History() {
     <ul className="border-l-8 border-gray-theme ml-12 p-2">
       <li>
         <HistoryBranch date="2021/4/1">
-          <div>hoge</div>
-          <div>hoge</div>
-          <div>hoge</div>
-          <div>hoge</div>
+          <p className="break-words">
+            hogaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaassssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssaaaaae
+          </p>
         </HistoryBranch>
       </li>
       <li>

@@ -11,7 +11,10 @@ export default function Home() {
         <title>Shoma's Home</title>
       </head>
 
+      <Navbar open={open} onClick={() => setOpen(!open)} />
+
       <header
+        id="top"
         className="w-screen h-screen bg-gray-50 p-8 flex justify-start items-center"
       >
         <h1 id="top">
@@ -19,8 +22,6 @@ export default function Home() {
           <div className="text-6xl font-semibold">Home</div>
         </h1>
       </header>
-
-      <Navbar open={open} onClick={() => setOpen(!open)} />
 
       <div className="max-w-3xl mx-auto">
         <Section id="about" title="About">
