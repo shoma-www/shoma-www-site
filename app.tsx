@@ -10,6 +10,11 @@ export default function App(
     <main>
       <head>
         <meta name="viewport" content="width=device-width" />
+
+        <link
+          href="https://fonts.googleapis.com/icon?family=Material+Icons"
+          rel="stylesheet"
+        />
       </head>
       <Page {...pageProps} />
     </main>
