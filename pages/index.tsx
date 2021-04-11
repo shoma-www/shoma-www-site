@@ -15,7 +15,7 @@ export default function Home() {
 
       <header
         id="top"
-        className="w-screen h-screen bg-gray-50 p-8 flex justify-start items-center"
+        className="w-full h-screen bg-gray-50 p-8 flex justify-start items-center"
       >
         <h1 id="top">
           <div className="text-6xl font-semibold">Shoma's</div>
@@ -23,7 +23,7 @@ export default function Home() {
         </h1>
       </header>
 
-      <div className="max-w-3xl mx-auto">
+      <div className="max-w-3xl mx-auto mb-16">
         <Section id="about" title="About">
           <div>
             <div>
@@ -90,7 +90,8 @@ export default function Home() {
                   <p className="break-words">
                     すごい不満があったわけではないけど、事業会社っぽいとこにいけそうだったので、またもや転職<br />
                     ジョブホッパーの道を歩んでる気がする<br />
-                    決済代行的なファクタリング的なSaaSを提供してる会社に今いる、と思う
+                    決済代行的なファクタリング的なSaaSを提供してる会社に転職する<br />
+                    環境かわりすぎて？しかでてこない
                   </p>
                 </HistoryBranch>
               </li>
@@ -100,13 +101,31 @@ export default function Home() {
 
         <Section id="skill" title="Skill">
           <div>
-            スキルの説明
+            <p className="mb-4">
+              使った気がする技術たち<br />
+              実務に耐えられるかは未知数
+            </p>
+            <ul className="list-disc ml-8">
+              <li>
+                C# (.Net Framework), PHP(Laravel, Wordpress), Go,
+                JavaScript/TypeScript(React/Nuxt.js/NestJS)
+              </li>
+              <li>Oracle 11g, MySQL</li>
+              <li>AWS, GCP</li>
+            </ul>
           </div>
         </Section>
 
-        <Section id="work" title="Work">
-          <div>
-            つくったやつの説明 ないけど
+        <Section id="work" title="Works">
+          <div className="mb-4">
+            個人でつくったやつ
+          </div>
+          <div
+            className="flex flex-col lg:flex-row lg:justify-start lg:flex-wrap"
+          >
+            <div>
+              hoge
+            </div>
           </div>
         </Section>
       </div>
