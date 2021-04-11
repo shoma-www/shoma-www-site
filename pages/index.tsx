@@ -138,7 +138,7 @@ export default function Home() {
               Denoの<a href="https://alephjs.org/" className="underline">
                 Aleph.js
               </a>っていう素敵なフレームワークを使って作っている。<br />
-              ホスティング自体は、firebase hostingで無駄にcloudbuild使ってデプロイしてる。<br />
+              ホスティング自体は、firebase hostingで無駄にcloudbuild使ってデプロイしてる。
               少しだけレスポンシブもどきになっている。<br />
               Aleph.jsは見守っていきたい気持ち。
             </WorkCard>
