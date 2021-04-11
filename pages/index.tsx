@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Navbar from "../components/organisms/navbar.tsx";
 import Section from "../components/molecules/section.tsx";
 import HistoryBranch from "../components/molecules/historyBranch.tsx";
+import WorkCard from "../components/molecules/workCard.tsx";
 
 export default function Home() {
   const [open, setOpen] = useState(false);
@@ -121,11 +122,35 @@ export default function Home() {
             個人でつくったやつ
           </div>
           <div
-            className="flex flex-col lg:flex-row lg:justify-start lg:flex-wrap"
+            className="flex flex-col md:flex-row md:justify-start md:flex-wrap"
           >
-            <div>
-              hoge
-            </div>
+            <WorkCard
+              className="w-full md:w-80 mb-4 md:mr-4"
+              title="最初のサイト"
+              url="https://www.shumai-engineer.com"
+              github="https://github.com/shoma-www/shoma-portfolio-site"
+              img="images/shumai-engineer.jpg"
+            >
+              <a href="https://www.gatsbyjs.com/" className="underline">
+                Gatsby
+              </a>とAWS Amplifyでつくった最初のポートフォリオ用のサイト。<br />
+              ブログ作ろうと思ったまま、まったく更新していなかった悲しき遺産。<br />
+              触ったの結構前だったので、公式サイト久しぶりに見たら劇的進化してた。
+            </WorkCard>
+            <WorkCard
+              className="w-full md:w-80 mb-4"
+              title="このサイト"
+              url="https://www.shumai-engineer.com"
+              github="https://github.com/shoma-www/shoma-portfolio-site"
+              img="images/shoma-www-site.jpg"
+            >
+              休職のリハビリで作っているこのサイト。<br />
+              Denoの<a href="https://alephjs.org/" className="underline">
+                Aleph.js
+              </a>っていう素敵なフレームワークを使って作っている。<br />
+              ホスティング自体は、firebase hostingで無駄にcloudbuild使ってデプロイしてる。<br />
+              Aleph.jsは見守っていきたい気持ち。
+            </WorkCard>
           </div>
         </Section>
       </div>
