@@ -24,8 +24,8 @@ export default function Navbar(
             name="History"
             icon="history"
           />
-          <NavLink href="#skill" name="Skil" icon="psychology" />
-          <NavLink href="#work" name="Work" icon="work" />
+          <NavLink href="#skill" name="Skill" icon="psychology" />
+          <NavLink href="#work" name="Works" icon="work" />
           <NavLink href="./blog" name="Blog" icon="article" />
         </ul>
       </nav>
