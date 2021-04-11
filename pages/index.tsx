@@ -38,7 +38,7 @@ export default function Home() {
                 </a>
               </li>
             </ul>
-            <p className="break-words">
+            <p className="text-base break-words">
               労働からプログラミングはじめたバックエンドエンジニアもどき。<br />
               なにができるかはよくわからない。<br />
               埼玉県在住。２日前のことはだいたい忘れてます。<br />
@@ -106,7 +106,7 @@ export default function Home() {
               使った気がする技術たち<br />
               実務に耐えられるかは未知数
             </p>
-            <ul className="list-disc ml-8">
+            <ul className="list-disc ml-8 break-words">
               <li>
                 C# (.Net Framework), PHP(Laravel, Wordpress), Go,
                 JavaScript/TypeScript(React/Nuxt.js/NestJS)
@@ -125,7 +125,7 @@ export default function Home() {
             className="flex flex-col md:flex-row md:justify-start md:flex-wrap"
           >
             <WorkCard
-              className="w-full md:w-80 mb-4 md:mr-4"
+              className="w-full md:w-80 mb-8 md:mr-4"
               title="最初のサイト"
               url="https://www.shumai-engineer.com"
               github="https://github.com/shoma-www/shoma-portfolio-site"
@@ -138,7 +138,7 @@ export default function Home() {
               触ったの結構前だったので、公式サイト久しぶりに見たら劇的進化してた。
             </WorkCard>
             <WorkCard
-              className="w-full md:w-80 mb-4"
+              className="w-full md:w-80 mb-8"
               title="このサイト"
               url="https://shoma-www.dev/"
               github="https://github.com/shoma-www/shoma-www-site"

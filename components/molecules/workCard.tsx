@@ -22,7 +22,7 @@ export default function WorkCard(
   return (
     <Card className={`${className}`}>
       <div className="flex items-center">
-        <span className="mr-2">{title}</span>
+        <span className="mr-2 mb-2">{title}</span>
         {url && <a
           href={url}
           className="flex items-center mr-1"
@@ -33,7 +33,9 @@ export default function WorkCard(
           <img src="images/i-github.svg" />
         </a>}
       </div>
-      {img ? <img src={img} /> : noImage}
+      <div className=" mb-2">
+        {img ? <img src={img} /> : noImage}
+      </div>
       <div className="text-base">
         {children}
       </div>
