@@ -140,8 +140,8 @@ export default function Home() {
             <WorkCard
               className="w-full md:w-80 mb-4"
               title="このサイト"
-              url="https://www.shumai-engineer.com"
-              github="https://github.com/shoma-www/shoma-portfolio-site"
+              url="https://shoma-www.dev/"
+              github="https://github.com/shoma-www/shoma-www-site"
               img="images/shoma-www-site.jpg"
             >
               休職のリハビリで作っているこのサイト。<br />
