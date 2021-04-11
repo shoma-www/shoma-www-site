@@ -55,45 +55,35 @@ export default function Home() {
             <ul className="border-l-8 border-gray-theme ml-12 p-2">
               <li>
                 <HistoryBranch date="1993年10月">
-                  <p className="break-words">
-                    関西のどこかで生まれる
-                  </p>
+                  関西のどこかで生まれる
                 </HistoryBranch>
               </li>
               <li>
                 <HistoryBranch date="2016年3月">
-                  <p className="break-words">
-                    <b>Kwansei</b>学院大学 理工学部をぎりぎり卒業する
-                  </p>
+                  <b>Kwansei</b>学院大学 理工学部をぎりぎり卒業する
                 </HistoryBranch>
               </li>
               <li>
                 <HistoryBranch date="2016年4月">
-                  <p className="break-words">
-                    一念発起（他に採用されなかった）で東京の会社に就職する<br />
-                    どっかの証券の勘定系のシステムと格闘する<br />
-                    コボる？なにそれ？美味しいの？
-                  </p>
+                  一念発起（他に採用されなかった）で東京の会社に就職する<br />
+                  どっかの証券の勘定系のシステムと格闘する<br />
+                  コボる？なにそれ？美味しいの？
                 </HistoryBranch>
               </li>
               <li>
                 <HistoryBranch date="2019年7月">
-                  <p className="break-words">
-                    Excelと密結合してたので、離別することを決意<br />
-                    グループ会社の暗号資産取引的なシステムを扱ってる会社に転職する<br />
-                    暗号資産取引だからといって、特に暗号資産に関わるところはあんまり触らなかった<br />
-                    LiquidのeKYCシステムはすごいと思った（小並感）
-                  </p>
+                  Excelと密結合してたので、離別することを決意<br />
+                  グループ会社の暗号資産取引的なシステムを扱ってる会社に転職する<br />
+                  暗号資産取引だからといって、特に暗号資産に関わるところはあんまり触らなかった<br />
+                  LiquidのeKYCシステムはすごいと思った（小並感）
                 </HistoryBranch>
               </li>
               <li>
                 <HistoryBranch date="2020年8月">
-                  <p className="break-words">
-                    すごい不満があったわけではないけど、事業会社っぽいとこにいけそうだったので、またもや転職<br />
-                    ジョブホッパーの道を歩んでる気がする<br />
-                    決済代行的なファクタリング的なSaaSを提供してる会社に転職する<br />
-                    環境かわりすぎて？しかでてこない
-                  </p>
+                  すごい不満があったわけではないけど、事業会社っぽいとこにいけそうだったので、またもや転職<br />
+                  ジョブホッパーの道を歩んでる気がする<br />
+                  決済代行的なファクタリング的なSaaSを提供してる会社に転職する<br />
+                  環境かわりすぎて？しかでてこない
                 </HistoryBranch>
               </li>
             </ul>
