@@ -14,7 +14,7 @@ export default (): LoaderPlugin => {
   return {
     name: "blog-articles-loader",
     type: "loader",
-    test: /articles\.(json)$/,
+    test: /articles\.json$/,
     allowPage: true,
     pagePathResolve: (url: string) => {
       const path = util.trimPrefix(
@@ -44,12 +44,11 @@ export default (): LoaderPlugin => {
           console.log("Not match metadata. Please check this page. ", path);
           continue;
         }
-        if (!reg.test(__content.trimStart())) {
+        if (!reg.test(__content)) {
           console.log("Not match data. Please check this page. ", path);
           continue;
         }
         const html = marked.parse(RegExp.$1);
-        console.log(JSON.stringify(html));
 
         list.push(`
           <li id="${meta.id}">

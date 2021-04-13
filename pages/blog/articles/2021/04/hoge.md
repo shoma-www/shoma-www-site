@@ -1,6 +1,6 @@
 ---
 title: hoge
-url: hoge
+url: articles/2021/04/hoge
 date: 2021-04-12
 id: doc-page-welcome3
 ---

@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function All() {
+export default function ArticleList() {
   return (
     <div>
       <h2>記事一覧ページだよ</h2>

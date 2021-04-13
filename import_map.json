@@ -6,6 +6,9 @@
     "framework/react": "https://deno.land/x/aleph@v0.3.0-alpha.25/framework/react/mod.ts",
     "react": "https://esm.sh/react@17.0.2",
     "react-dom": "https://esm.sh/react-dom@17.0.2",
+    "date_fns/format": "https://deno.land/x/date_fns@v2.15.0/format/index.js",
+    "date_fns/parseISO": "https://deno.land/x/date_fns@v2.15.0/parseISO/index.js",
+    "date_fns/locale/ja": "https://deno.land/x/date_fns@v2.15.0/locale/ja/index.js",
     "tailwind": "https://esm.sh/tailwindcss/dist/tailwind.min.css"
   },
   "scopes": {}

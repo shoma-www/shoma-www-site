@@ -1,7 +1,7 @@
 ---
 title: fuga
-url: 2021/04/fuga
-date: 2021-04-12
+url: articles/2021/04/fuga
+date: 2021-04-13
 id: doc-page-welcome
 ---
 次は楽長の安心へん者から金へむし子たや。つまりどう生意気ないたってセロたです。
