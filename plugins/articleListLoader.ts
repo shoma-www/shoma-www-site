@@ -3,9 +3,10 @@ import type {
   LoaderTransformOutput,
 } from "https://deno.land/x/aleph@v0.3.0-alpha.25/types.ts";
 import util from "https://deno.land/x/aleph@v0.3.0-alpha.25/shared/util.ts";
-import { parse } from "https://deno.land/std/encoding/yaml.ts";
 import { isLoaderConfig, isMetadata } from "../types.ts";
 import { getFilePaths } from "../lib/utils.ts";
+import marked from "https://esm.sh/marked@2.0.1";
+import { safeLoadFront } from "https://esm.sh/yaml-front-matter@4.1.1";
 
 const decoder = new TextDecoder();
 
@@ -32,31 +33,38 @@ export default (): LoaderPlugin => {
         throw new Error("No required value in articles.json.");
       }
 
-      const reg = new RegExp("^(-){3}(.*)(-){3}", "s");
+      const reg = new RegExp("(.*)(<!-- more -->){1}", "s");
       const list: string[] = [];
       for (
         const path of await getFilePaths(obj.articleDir, new RegExp(".*\.md"))
       ) {
         const byteData = await Deno.readFile(path);
-        const article = decoder.decode(byteData);
-        if (!reg.test(article.trimStart())) {
+        const { __content, ...meta } = safeLoadFront(decoder.decode(byteData));
+        if (!isMetadata(meta)) {
+          console.log("Not match metadata. Please check this page. ", path);
           continue;
         }
-
-        const meta = parse(RegExp.$2);
-        if (isMetadata(meta)) {
-          list.push(`
-            <li id="${meta.id}">
-              <span>${meta.date.toString()}</span><a href="./${meta.url}">${meta.title}</a>
-            </li>`);
+        if (!reg.test(__content.trimStart())) {
+          console.log("Not match data. Please check this page. ", path);
+          continue;
         }
+        const html = marked.parse(RegExp.$1);
+        console.log(JSON.stringify(html));
+
+        list.push(`
+          <li id="${meta.id}">
+            <div className="p-8">
+              <span>${meta.date.toString()}</span><a href="./${meta.url}">${meta.title}</a>
+              ${html}
+            </div>
+          </li>`);
       }
 
       return {
         type: "tsx",
         code: `
         import React from "react";
-        export default function All() {
+        export default function Articles() {
           return (
             <div>
               <h2>記事一覧ページだよ（from ローダー）</h2>
@@ -66,7 +74,8 @@ export default (): LoaderPlugin => {
               <a href="../">back home</a>
             </div>
           );
-        }`,
+        }
+        `,
       };
     },
   };
