@@ -12,7 +12,7 @@ steps:
       'deno', 'run',
       '--unstable',
       '-A',
-      'https://deno.land/x/aleph@v0.3.0-alpha.28/cli.ts',
+      'https://deno.land/x/aleph@v0.3.0-alpha.29/cli.ts',
       build
     ]
 
