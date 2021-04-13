@@ -7,7 +7,7 @@ export default function Blog(
   { Page }: { Page: ComponentType<any> & { meta?: MetaData } },
 ) {
   let content = (<Page />);
-  if (Page.meta) {
+  if (Page.meta !== undefined) {
     const { title, id, date } = Page.meta;
     content = (
       <div className="blogentry">

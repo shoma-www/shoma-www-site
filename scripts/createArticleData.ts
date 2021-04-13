@@ -2,6 +2,7 @@ import { Article, isArticleConfig, isMetadata } from "../types.ts";
 import { getFilePaths } from "../lib/utils.ts";
 import marked from "https://esm.sh/marked@2.0.1";
 import { safeLoadFront } from "https://esm.sh/yaml-front-matter@4.1.1";
+import compareDesc from "https://deno.land/x/date_fns@v2.15.0/compareDesc/index.js";
 
 const configFile = "scripts/articleConfig.json";
 
@@ -38,8 +39,7 @@ for (
 }
 
 const sortedArticles = articles.sort((a, b) => {
-  return b.metaData.date.getUTCSeconds() -
-    a.metaData.date.getUTCSeconds();
+  return compareDesc(a.metaData.date, b.metaData.date);
 });
 const fileContent = `const Articles = ${JSON.stringify(sortedArticles)};
 export default Articles;`;

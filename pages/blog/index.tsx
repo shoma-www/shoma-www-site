@@ -11,7 +11,7 @@ export default function ArticleList() {
   const list = [];
   for (const article of articles) {
     list.push(
-      <li>
+      <li key={article.metaData.id}>
         <div className="p-8">
           <span>{formatDate(article.metaData.date)}</span>
           <a href={`./${article.metaData.url}`}>{article.metaData.title}</a>
