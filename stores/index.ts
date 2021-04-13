@@ -1,5 +1,5 @@
 import { createContext } from "react";
-import { Article } from "../types.ts";
+import { Article } from "~/types.ts";
 
 const initialContext: { articles?: Article[] } = {};
 

@@ -1,6 +1,6 @@
 import React, { PropsWithChildren } from "react";
-import Balloon from "../atoms/balloon.tsx";
-import Point from "../atoms/point.tsx";
+import Balloon from "~/components/atoms/balloon.tsx";
+import Point from "~/components/atoms/point.tsx";
 
 export default function HistoryBranch(
   { date, children }: PropsWithChildren<{ date: string }>,

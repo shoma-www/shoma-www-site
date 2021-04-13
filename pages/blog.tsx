@@ -1,6 +1,6 @@
 import React, { ComponentType, useCallback } from "react";
-import { MetaData } from "../types.ts";
-import { formatDate } from "../lib/utils.ts";
+import { MetaData } from "~/types.ts";
+import { formatDate } from "~/lib/utils.ts";
 import { redirect } from "framework";
 
 export default function Blog(

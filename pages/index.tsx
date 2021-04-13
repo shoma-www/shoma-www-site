@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import Navbar from "../components/organisms/navbar.tsx";
-import Section from "../components/molecules/section.tsx";
-import HistoryBranch from "../components/molecules/historyBranch.tsx";
-import WorkCard from "../components/molecules/workCard.tsx";
+import Navbar from "~/components/organisms/navbar.tsx";
+import Section from "~/components/molecules/section.tsx";
+import HistoryBranch from "~/components/molecules/historyBranch.tsx";
+import WorkCard from "~/components/molecules/workCard.tsx";
 
 export default function Home() {
   const [open, setOpen] = useState(false);

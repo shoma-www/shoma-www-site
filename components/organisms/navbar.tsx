@@ -1,6 +1,6 @@
 import React from "react";
-import NavLink from "../atoms/navlink.tsx";
-import Toggle from "../molecules/toggle.tsx";
+import NavLink from "~/components/atoms/navlink.tsx";
+import Toggle from "~/components/molecules/toggle.tsx";
 
 export default function Navbar(
   { open, onClick }: { open: boolean; onClick?(e: React.MouseEvent): void },

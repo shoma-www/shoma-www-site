@@ -1,5 +1,5 @@
 import React, { PropsWithChildren } from "react";
-import Card from "../atoms/card.tsx";
+import Card from "~/components/atoms/card.tsx";
 
 export default function WorkCard(
   { children, className, title, url, github, img }: PropsWithChildren<

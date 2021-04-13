@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
-import { ArticlesContext } from "../../stores/index.ts";
-import { formatDate } from "../../lib/utils.ts";
+import { ArticlesContext } from "~/stores/index.ts";
+import { formatDate } from "~/lib/utils.ts";
 
 export default function ArticleList() {
   const ctx = useContext(ArticlesContext);
