@@ -1,10 +1,30 @@
 import { Article, isArticleConfig, isMetadata } from "../types.ts";
-import { getFilePaths } from "../lib/utils.ts";
 import marked from "https://esm.sh/marked@2.0.1";
 import { safeLoadFront } from "https://esm.sh/yaml-front-matter@4.1.1";
 import compareDesc from "https://deno.land/x/date_fns@v2.15.0/compareDesc/index.js";
 
 const configFile = "scripts/articleConfig.json";
+
+export async function getFilePaths(
+  currentPath: string,
+  filterFileName: RegExp,
+): Promise<string[]> {
+  let paths: string[] = [];
+
+  for await (const dirEntry of Deno.readDir(currentPath)) {
+    const entryPath = `${currentPath}/${dirEntry.name}`;
+    if (dirEntry.isDirectory) {
+      paths = paths.concat(await getFilePaths(entryPath, filterFileName));
+      continue;
+    }
+    if (dirEntry.isFile && filterFileName.test(entryPath)) {
+      paths.push(entryPath);
+      continue;
+    }
+  }
+
+  return paths;
+}
 
 const decoder = new TextDecoder();
 const encoder = new TextEncoder();
