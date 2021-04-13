@@ -27,7 +27,7 @@ export default (): LoaderPlugin => {
     },
     transform: ({ content }) => {
       const { __content, ...meta } = safeLoadFront(decoder.decode(content));
-      const html = marked.parse(__content);
+      const html = marked.parse(__content, { breaks: true, xhtml: true });
       const framework = Deno.env.get("ALEPH_FRAMEWORK");
       const props = {
         id: util.isString(meta.id) ? meta.id : undefined,
