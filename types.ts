@@ -5,7 +5,7 @@ export interface MetaData {
   id: string;
 }
 
-export interface LoaderConfig {
+export interface ArticleConfig {
   articleDir: string;
 }
 
@@ -23,12 +23,12 @@ export const isMetadata = (arg: any): arg is MetaData => {
 };
 
 // deno-lint-ignore no-explicit-any
-export const isLoaderConfig = (arg: any): arg is LoaderConfig => {
+export const isArticleConfig = (arg: any): arg is ArticleConfig => {
   return typeof arg.articleDir === "string";
 };
 
 // deno-lint-ignore no-explicit-any
-export const isArticle = (arg: any): arg is LoaderConfig => {
+export const isArticle = (arg: any): arg is Article => {
   return arg.metaData !== undefined &&
     isMetadata(arg.metaData) &&
     typeof arg.html === "string";
