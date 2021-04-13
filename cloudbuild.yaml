@@ -3,7 +3,7 @@ steps:
     args: [
       'deno', 'run',
       '--allow-read',
-      --allow-writeA',
+      '--allow-write',
       'scripts/createArticleData.ts'
     ]
 
