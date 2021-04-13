@@ -1,8 +1,8 @@
 import type {
   LoaderPlugin,
   LoaderTransformOutput,
-} from "https://deno.land/x/aleph@v0.3.0-alpha.25/types.ts";
-import util from "https://deno.land/x/aleph@v0.3.0-alpha.25/shared/util.ts";
+} from "https://deno.land/x/aleph@v0.3.0-alpha.28/types.ts";
+import util from "https://deno.land/x/aleph@v0.3.0-alpha.28/shared/util.ts";
 import { isLoaderConfig, isMetadata } from "../types.ts";
 import { getFilePaths } from "../lib/utils.ts";
 import marked from "https://esm.sh/marked@2.0.1";
