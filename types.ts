@@ -9,7 +9,7 @@ export interface metaData {
 export const isMetadata = (arg: any): arg is metaData => {
   return typeof arg.title === "string" &&
     typeof arg.url === "string" &&
-    typeof arg.date === "string" &&
+    arg.date instanceof Date &&
     typeof arg.id === "string";
 };
 

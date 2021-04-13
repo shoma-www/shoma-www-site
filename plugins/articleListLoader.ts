@@ -47,7 +47,7 @@ export default (): LoaderPlugin => {
         if (isMetadata(meta)) {
           list.push(`
             <li id="${meta.id}">
-              <span>${meta.date}</span><a href="./${meta.url}">${meta.title}</a>
+              <span>${meta.date.toString()}</span><a href="./${meta.url}">${meta.title}</a>
             </li>`);
         }
       }
