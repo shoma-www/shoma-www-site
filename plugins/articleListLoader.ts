@@ -3,6 +3,24 @@ import type {
   LoaderTransformOutput,
 } from "https://deno.land/x/aleph@v0.3.0-alpha.25/types.ts";
 import util from "https://deno.land/x/aleph@v0.3.0-alpha.25/shared/util.ts";
+import { parse } from "https://deno.land/std/encoding/yaml.ts";
+
+interface metaData {
+  title: string;
+  url: string;
+  date: Date;
+  id: string;
+}
+
+// deno-lint-ignore no-explicit-any
+const isMetadata = (arg: any): arg is metaData => {
+  return typeof arg.title === "string" &&
+    typeof arg.url === "string" &&
+    arg.date instanceof Date &&
+    typeof arg.id === "string";
+};
+
+const decoder = new TextDecoder();
 
 export default (): LoaderPlugin => {
   return {
@@ -18,9 +36,29 @@ export default (): LoaderPlugin => {
 
       return { path, isIndex: true };
     },
-    transform: (
+    transform: async (
       { content }: { content: Uint8Array },
-    ): LoaderTransformOutput => {
+    ): Promise<LoaderTransformOutput> => {
+      const data = decoder.decode(content);
+      const obj = JSON.parse(data);
+      const paths = await getFilePaths(obj.path);
+
+      const reg = new RegExp("^(-){3}(.*)(-){3}", "s");
+      const list: string[] = [];
+      for (const path of paths) {
+        const byteData = await Deno.readFile(path);
+        const article = decoder.decode(byteData);
+        if (reg.test(article.trimStart())) {
+          const meta = parse(RegExp.$2);
+          if (isMetadata(meta)) {
+            list.push(`
+              <li id="${meta.id}">
+                <span>${meta.date.getFullYear()}/${meta.date.getMonth()}/${meta.date.getDate()}</span><a href="./${meta.url}">${meta.title}</a>
+              </li>`);
+          }
+        }
+      }
+
       return {
         type: "tsx",
         code: `
@@ -30,13 +68,9 @@ export default (): LoaderPlugin => {
             <div>
               <h2>記事一覧ページだよ（from ローダー）</h2>
               <ul>
-                <li>
-                  <a href="./hoge">hoge</a>
-                </li>
-                <li>
-                  <a href="../">back home</a>
-                </li>
+                ${list.join("")}
               </ul>
+              <a href="../">back home</a>
             </div>
           );
         }`,
@@ -44,3 +78,22 @@ export default (): LoaderPlugin => {
     },
   };
 };
+
+async function getFilePaths(currentPath: string): Promise<string[]> {
+  let paths: string[] = [];
+
+  for await (const dirEntry of Deno.readDir(currentPath)) {
+    const entryPath = `${currentPath}/${dirEntry.name}`;
+
+    if (dirEntry.isDirectory) {
+      paths = paths.concat(await getFilePaths(entryPath));
+      continue;
+    }
+    if (dirEntry.isFile && entryPath.endsWith(".md")) {
+      paths.push(entryPath);
+      continue;
+    }
+  }
+
+  return paths;
+}
