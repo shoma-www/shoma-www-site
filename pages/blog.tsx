@@ -4,7 +4,6 @@ import { formatDate } from "~/lib/utils.ts";
 import { redirect } from "framework";
 
 export default function Blog(
-  // deno-lint-ignore no-explicit-any
   { Page }: { Page: ComponentType<any> & { meta?: MetaData } },
 ) {
   const to = "/blog/";
