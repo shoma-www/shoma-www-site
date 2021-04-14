@@ -14,16 +14,17 @@ export default function Blog(
 
   let content = (<Page />);
   if (Page.meta !== undefined) {
-    const { title, id, date, url, description } = Page.meta;
-    mUrl = `${BASE_URL}/blog${url}`;
+    const { id, title } = Page.meta;
+    const date = formatDate(Page.meta.date.toString());
+    mUrl = `${BASE_URL}/blog${Page.meta.url}`;
     mTitle = `${title} - Shoma's Home Blog`;
-    mDesctiption = description || "";
+    mDesctiption = `${date} - ${Page.meta.description || ""}`;
 
     content = (
       <div className="blogentry">
         <h2 id={id} className="entry-title">{title}</h2>
         <div className="date">
-          {formatDate(date.toString())}
+          {date}
         </div>
         <div className="entry-content">
           <Page />
