@@ -15,10 +15,10 @@ export default function ArticleList() {
           rel="prefetch"
           className="hover:underline"
         >
-          <div className="date text-base">
+          <div className="date text-base mb-2">
             {formatDate(date)}
           </div>
-          <h3 className="title entry-title text-3xl mb-4">
+          <h3 className="title entry-title text-3xl mb-8">
             {title}
           </h3>
         </a>
@@ -30,7 +30,7 @@ export default function ArticleList() {
           続きを読む
         </Button>
       </li>,
-      <hr />,
+      <hr className="mt-16" />,
     );
   }
   if (list.length > 0) {
@@ -38,7 +38,7 @@ export default function ArticleList() {
   }
   return (
     <div className="pb-8">
-      <ul className="p-8 mb-16">
+      <ul className="px-8 mb-16">
         {list}
       </ul>
       <a href="/" rel="prefetch">Go back Shoma's Home</a>
