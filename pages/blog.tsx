@@ -38,6 +38,7 @@ export default function Blog(
         <title>{mTitle}</title>
         <meta name="description" content={mDesctiption} />
         <meta property="og:url" content={mUrl} />
+        <meta property="og:site_name" content="Shoma's Home Blog" />
         <meta property="og:title" content={mTitle} />
         <meta
           property="og:description"
