@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import { useRouter } from "framework/react";
+import { BASE_URL } from "~/constant.ts";
 import Navbar from "~/components/organisms/navbar.tsx";
 import Section from "~/components/molecules/section.tsx";
 import HistoryBranch from "~/components/molecules/historyBranch.tsx";
@@ -6,10 +8,27 @@ import WorkCard from "~/components/molecules/workCard.tsx";
 
 export default function Home() {
   const [open, setOpen] = useState(false);
+  const { pathname } = useRouter();
   return (
     <>
       <head>
         <title>Shoma's Home</title>
+        <meta name="description" content="shoma-wwwのポートフォリオサイト。自己紹介とそのほかつらつら" />
+        <meta property="og:url" content={`${BASE_URL}${pathname}`} />
+        <meta property="og:title" content="Shoma's Home" />
+        <meta property="og:type" content="website" />
+        <meta
+          property="og:description"
+          content="shoma-wwwのポートフォリオサイト。自己紹介とそのほかつらつら"
+        />
+        <meta
+          property="og:image"
+          content={`${BASE_URL}/public/images/og-image.png`}
+        />
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:site" content="@w0GumZcZGwOHfBB" />
+        <meta property="og:site_name" content="Shoma's Home" />
+        <meta property="og:locale" content="ja_JP" />
       </head>
 
       <Navbar open={open} onClick={() => setOpen(!open)} />
