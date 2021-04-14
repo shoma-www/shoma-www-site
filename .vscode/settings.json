@@ -1,7 +1,6 @@
 {
   "files.exclude": {
-    "**/.aleph": true,
-    "**/dist": true
+    "**/.aleph": true
   },
   "editor.formatOnSave": true,
   "editor.defaultFormatter": "denoland.vscode-deno",
