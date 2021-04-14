@@ -1,14 +1,16 @@
 import React, { useState } from "react";
 import { useRouter } from "framework/react";
 import { BASE_URL } from "~/constant.ts";
-import Navbar from "~/components/organisms/navbar.tsx";
+import ArticleCards from "~/components/organisms/articleCards.tsx";
 import Section from "~/components/molecules/section.tsx";
 import HistoryBranch from "~/components/molecules/historyBranch.tsx";
 import WorkCard from "~/components/molecules/workCard.tsx";
+import Navbar from "~/components/organisms/navbar.tsx";
 
 export default function Home() {
   const [open, setOpen] = useState(false);
   const { pathname } = useRouter();
+
   return (
     <>
       <head>
@@ -147,6 +149,13 @@ export default function Home() {
               Aleph.jsは見守っていきたい気持ち。
             </WorkCard>
           </div>
+        </Section>
+
+        <Section id="blog" title="Blog">
+          <div className="mb-4">
+            書く気力がわいたら書くブログの最新記事
+          </div>
+          <ArticleCards />
         </Section>
       </div>
 
