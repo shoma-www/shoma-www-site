@@ -1,6 +1,7 @@
 import React from "react";
 import { formatDate } from "~/lib/utils.ts";
 import Articles from "~/articleData.ts";
+import Button from "~/components/atoms/button.tsx";
 
 export default function ArticleList() {
   const list = [];
@@ -26,16 +27,9 @@ export default function ArticleList() {
             className="content entry-content text-base mb-8"
             dangerouslySetInnerHTML={{ __html: article.html }}
           />
-          <div className="text-center">
-            <a
-              id={id}
-              href={`/blog${url}`}
-              rel="prefetch"
-              className="py-2 px-8 rounded-full border-2 transform hover:bg-gray-50"
-            >
-              続きを読む
-            </a>
-          </div>
+          <Button href={`/blog${url}`}>
+            続きを読む
+          </Button>
         </div>
       </li>,
     );
