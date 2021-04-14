@@ -11,3 +11,12 @@ services:
       - "8080:8080"
     volumes:
       - .:/code
+
+  static:
+    build:
+      context: ./docker
+      dockerfile: dockerfile.nginx.dev
+    ports:
+      - "80:80"
+    volumes:
+      - ./dist:/usr/share/nginx/html

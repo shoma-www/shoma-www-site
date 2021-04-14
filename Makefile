@@ -1,6 +1,5 @@
 clear:
 	sudo rm -rf .aleph
-	sudo rm -rf dist
 
 up: clear
 	deno run --allow-read --allow-write scripts/createArticleData.ts
