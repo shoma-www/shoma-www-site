@@ -8,7 +8,7 @@ export default function ArticleList() {
   for (const article of Articles) {
     const { id, title, date, url } = article.metaData;
     list.push(
-      <li key={id} className="p-8">
+      <li key={id} className="my-8">
         <a
           id={id}
           href={`/blog${url}`}
@@ -30,11 +30,15 @@ export default function ArticleList() {
           続きを読む
         </Button>
       </li>,
+      <hr />,
     );
+  }
+  if (list.length > 0) {
+    list.pop();
   }
   return (
     <div className="pb-8">
-      <ul className="mb-16">
+      <ul className="p-8 mb-16">
         {list}
       </ul>
       <a href="/" rel="prefetch">Go back Shoma's Home</a>
