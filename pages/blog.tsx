@@ -3,6 +3,7 @@ import { MetaData } from "~/types.ts";
 import { formatDate } from "~/lib/utils.ts";
 import { BASE_URL } from "~/constant.ts";
 import Button from "~/components/atoms/button.tsx";
+import ShareButtons from "~/components/organisms/shareButtons.tsx";
 
 export default function Blog(
   // deno-lint-ignore no-explicit-any
@@ -26,7 +27,10 @@ export default function Blog(
         <div className="date mb-2">
           {date}
         </div>
-        <h2 id={id} className="entry-title text-3xl mb-8">{title}</h2>
+        <h2 id={id} className="entry-title text-3xl mb-2">
+          {title}
+        </h2>
+        <ShareButtons className="mb-8" url={mUrl} />
         <article className="entry-content mb-16">
           <Page />
         </article>
