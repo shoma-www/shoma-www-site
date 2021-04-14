@@ -5,7 +5,8 @@ export default (): Config => ({
   plugins: [
     markdown(),
   ],
-  // env: {
-  //   "ALEPH_BUILD_MODE": "development",
-  // },
+  // TODO:暫定対応
+  env: {
+    "ALEPH_BUILD_MODE": "development",
+  },
 });
