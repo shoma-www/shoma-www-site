@@ -7,7 +7,7 @@ export default function Blog(
   // deno-lint-ignore no-explicit-any
   { Page }: { Page: ComponentType<any> & { meta?: MetaData } },
 ) {
-  const to = "/blog";
+  const to = "/blog/";
   const onClick = useCallback(
     (e) => {
       e.preventDefault();
@@ -36,11 +36,11 @@ export default function Blog(
         id="top"
         className="w-full bg-gray-50 p-8 flex justify-start items-center mb-8"
       >
-        <a href={to} onClick={onClick}>
-          <h1 id="top" className="text-3xl font-semibold">
+        <h1 id="top" className="text-3xl font-semibold">
+          <a href={to} onClick={onClick}>
             <div>Shoma's Home Blog</div>
-          </h1>
-        </a>
+          </a>
+        </h1>
       </header>
       {content}
     </div>

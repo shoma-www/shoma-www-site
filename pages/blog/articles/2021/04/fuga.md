@@ -1,6 +1,6 @@
 ---
 title: fuga
-url: articles/2021/04/fuga
+url: /articles/2021/04/fuga
 date: 2021-04-13
 id: doc-page-welcome
 ---

@@ -10,12 +10,22 @@ export default function ArticleList() {
   }
   const list = [];
   for (const article of articles) {
+    const { id, title, date, url } = article.metaData;
     list.push(
-      <li key={article.metaData.id}>
+      <li key={id}>
         <div className="p-8">
-          <span>{formatDate(article.metaData.date)}</span>
-          <a href={`./${article.metaData.url}`}>{article.metaData.title}</a>
-          <div dangerouslySetInnerHTML={{ __html: article.html }} />
+          <div className="date">
+            {formatDate(date)}
+          </div>
+          <h3 className="title entry-title">
+            <a id={id} href={`/blog${url}`}>
+              {title}
+            </a>
+          </h3>
+          <div
+            className="content entry-content"
+            dangerouslySetInnerHTML={{ __html: article.html }}
+          />
         </div>
       </li>,
     );
