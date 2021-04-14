@@ -9,31 +9,43 @@ export default function ArticleList() {
     list.push(
       <li key={id}>
         <div className="p-8">
-          <div className="date">
-            {formatDate(date)}
-          </div>
-          <h3 className="title entry-title">
-            <a id={id} href={`/blog${url}`} rel="prefetch">
+          <a
+            id={id}
+            href={`/blog${url}`}
+            rel="prefetch"
+            className="hover:underline"
+          >
+            <div className="date text-base">
+              {formatDate(date)}
+            </div>
+            <h3 className="title entry-title text-3xl mb-4">
               {title}
-            </a>
-          </h3>
-          <div
-            className="content entry-content"
+            </h3>
+          </a>
+          <article
+            className="content entry-content text-base mb-8"
             dangerouslySetInnerHTML={{ __html: article.html }}
           />
+          <div className="text-center">
+            <a
+              id={id}
+              href={`/blog${url}`}
+              rel="prefetch"
+              className="py-2 px-8 rounded-full border-2 transform hover:bg-gray-50"
+            >
+              続きを読む
+            </a>
+          </div>
         </div>
       </li>,
     );
   }
   return (
     <div>
-      <h2>記事一覧ページだよ</h2>
       <ul>
         {list}
-        <li>
-          <a href="../" rel="prefetch">back home</a>
-        </li>
       </ul>
+      <a href="/" rel="prefetch">Go back Shoma's Home</a>
     </div>
   );
 }

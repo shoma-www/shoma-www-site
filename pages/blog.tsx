@@ -22,7 +22,7 @@ export default function Blog(
 
     content = (
       <div className="blogentry">
-        <h2 id={id} className="entry-title">{title}</h2>
+        <h2 id={id} className="entry-title text-xl">{title}</h2>
         <div className="date">
           {date}
         </div>
@@ -61,6 +61,9 @@ export default function Blog(
           </h1>
         </header>
         {content}
+        <footer className="text-center bg-gray-50 py-1">
+          ©2021 shoma-www
+        </footer>
       </div>
     </>
   );
