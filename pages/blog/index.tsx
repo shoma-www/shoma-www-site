@@ -18,7 +18,7 @@ export default function ArticleList() {
             {formatDate(date)}
           </div>
           <h3 className="title entry-title">
-            <a id={id} href={`/blog${url}`}>
+            <a id={id} href={`/blog${url}`} rel="prefetch">
               {title}
             </a>
           </h3>
@@ -36,7 +36,7 @@ export default function ArticleList() {
       <ul>
         {list}
         <li>
-          <a href="../">back home</a>
+          <a href="../" rel="prefetch">back home</a>
         </li>
       </ul>
     </div>
