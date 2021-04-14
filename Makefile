@@ -1,9 +1,14 @@
 clear:
 	sudo rm -rf .aleph
+	sudo rm -rf dist
 
 up: clear
 	deno run --allow-read --allow-write scripts/createArticleData.ts
-	docker-compose up
+	docker-compose up web
+
+up-static: clear
+	deno run --allow-read --allow-write scripts/createArticleData.ts
+	docker-compose up static
 
 cache-%:
 	$(eval VERSION := $*)

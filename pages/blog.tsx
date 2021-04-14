@@ -1,4 +1,4 @@
-import React, { ComponentType, useCallback } from "react";
+import React, { ComponentType } from "react";
 import { MetaData } from "~/types.ts";
 import { formatDate } from "~/lib/utils.ts";
 

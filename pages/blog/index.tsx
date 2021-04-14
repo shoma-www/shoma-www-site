@@ -1,15 +1,10 @@
-import React, { useContext } from "react";
-import { ArticlesContext } from "~/stores/index.ts";
+import React from "react";
 import { formatDate } from "~/lib/utils.ts";
+import Articles from "~/articleData.ts";
 
 export default function ArticleList() {
-  const ctx = useContext(ArticlesContext);
-  const articles = ctx.articles;
-  if (!articles) {
-    return;
-  }
   const list = [];
-  for (const article of articles) {
+  for (const article of Articles) {
     const { id, title, date, url } = article.metaData;
     list.push(
       <li key={id}>

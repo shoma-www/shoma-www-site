@@ -1,8 +1,6 @@
 import React, { ComponentType } from "react";
 import "tailwind";
 import "./style/index.css";
-import { ArticlesContext } from "./stores/index.ts";
-import Articles from "./articleData.ts";
 
 export default function App(
   // deno-lint-ignore no-explicit-any
@@ -18,9 +16,7 @@ export default function App(
           rel="stylesheet"
         />
       </head>
-      <ArticlesContext.Provider value={{ articles: Articles }}>
-        <Page {...pageProps} />
-      </ArticlesContext.Provider>
+      <Page {...pageProps} />
     </main>
   );
 }
