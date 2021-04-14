@@ -8,7 +8,7 @@ export default function Button(
   return (
     <div className={`text-center ${className}`}>
       <a
-        className="py-2 px-8 rounded-full border-2 transform hover:bg-gray-50"
+        className="py-2 px-8 rounded-full border-2 transform hover:bg-gray-50 bg-white"
         href={href}
       >
         {children}

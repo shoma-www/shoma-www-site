@@ -16,7 +16,7 @@ export default function ArticleCards() {
         date={date}
         title={title}
         html={article.html}
-        className="mb-2"
+        className="mb-8"
       />,
     );
   }

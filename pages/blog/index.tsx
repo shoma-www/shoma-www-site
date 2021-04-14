@@ -8,35 +8,33 @@ export default function ArticleList() {
   for (const article of Articles) {
     const { id, title, date, url } = article.metaData;
     list.push(
-      <li key={id}>
-        <div className="p-8">
-          <a
-            id={id}
-            href={`/blog${url}`}
-            rel="prefetch"
-            className="hover:underline"
-          >
-            <div className="date text-base">
-              {formatDate(date)}
-            </div>
-            <h3 className="title entry-title text-3xl mb-4">
-              {title}
-            </h3>
-          </a>
-          <article
-            className="content entry-content text-base mb-8"
-            dangerouslySetInnerHTML={{ __html: article.html }}
-          />
-          <Button href={`/blog${url}`}>
-            続きを読む
-          </Button>
-        </div>
+      <li key={id} className="p-8">
+        <a
+          id={id}
+          href={`/blog${url}`}
+          rel="prefetch"
+          className="hover:underline"
+        >
+          <div className="date text-base">
+            {formatDate(date)}
+          </div>
+          <h3 className="title entry-title text-3xl mb-4">
+            {title}
+          </h3>
+        </a>
+        <article
+          className="content entry-content text-base mb-8"
+          dangerouslySetInnerHTML={{ __html: article.html }}
+        />
+        <Button href={`/blog${url}`}>
+          続きを読む
+        </Button>
       </li>,
     );
   }
   return (
-    <div>
-      <ul>
+    <div className="pb-8">
+      <ul className="mb-16">
         {list}
       </ul>
       <a href="/" rel="prefetch">Go back Shoma's Home</a>

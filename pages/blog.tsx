@@ -2,6 +2,7 @@ import React, { ComponentType } from "react";
 import { MetaData } from "~/types.ts";
 import { formatDate } from "~/lib/utils.ts";
 import { BASE_URL } from "~/constant.ts";
+import Button from "~/components/atoms/button.tsx";
 
 export default function Blog(
   // deno-lint-ignore no-explicit-any
@@ -21,14 +22,17 @@ export default function Blog(
     mDesctiption = `${date} - ${Page.meta.description || ""}`;
 
     content = (
-      <div className="blogentry">
-        <h2 id={id} className="entry-title text-xl">{title}</h2>
-        <div className="date">
+      <div className="blogentry px-8 pb-32">
+        <div className="date mb-2">
           {date}
         </div>
-        <div className="entry-content">
+        <h2 id={id} className="entry-title text-3xl mb-8">{title}</h2>
+        <article className="entry-content mb-16">
           <Page />
-        </div>
+        </article>
+        <Button href="/blog">
+          一覧に戻る
+        </Button>
       </div>
     );
   }
@@ -49,7 +53,7 @@ export default function Blog(
           content={mImage}
         />
       </head>
-      <div>
+      <div className="min-h-screen relative">
         <header
           id="top"
           className="w-full bg-gray-50 p-8 flex justify-start items-center mb-8"
@@ -60,8 +64,20 @@ export default function Blog(
             </a>
           </h1>
         </header>
-        {content}
-        <footer className="text-center bg-gray-50 py-1">
+        <a
+          className="rounded-full fixed z-10 right-10 bottom-20 bg-white border-2 flex items-center justify-center"
+          href="#top"
+        >
+          <span className="material-icons md-50">
+            expand_less
+          </span>
+        </a>
+        <div className="max-w-3xl mx-auto">
+          {content}
+        </div>
+        <footer
+          className="w-full text-center bg-gray-50 py-1 absolute bottom-0"
+        >
           ©2021 shoma-www
         </footer>
       </div>
