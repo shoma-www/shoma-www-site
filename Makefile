@@ -3,11 +3,12 @@ clear:
 	sudo rm -rf dist
 
 up: clear
-	deno run --allow-read --allow-write scripts/createArticleData.ts
+	deno run --allow-read --allow-write scripts/createArticleData.ts && \
 	docker-compose up web
 
 up-static: clear
-	deno run --allow-read --allow-write scripts/createArticleData.ts
+	deno run --allow-read --allow-write scripts/createArticleData.ts && \
+	aleph build && \
 	docker-compose up static
 
 cache-%:
