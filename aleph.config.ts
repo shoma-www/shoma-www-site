@@ -5,4 +5,5 @@ export default (): Config => ({
   plugins: [
     markdown(),
   ],
+  ssr: false, // ssrの状態だとcomponentsで関数を読み込むとcomponentとして扱われてしまってエラーになる
 });
