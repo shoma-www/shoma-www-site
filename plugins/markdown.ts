@@ -2,6 +2,7 @@ import type { LoaderPlugin } from "https://deno.land/x/aleph@v0.3.0-alpha.29/typ
 import marked from "https://esm.sh/marked@2.0.1";
 import { safeLoadFront } from "https://esm.sh/yaml-front-matter@4.1.1";
 import util from "https://deno.land/x/aleph@v0.3.0-alpha.29/shared/util.ts";
+import { MetaData } from "../types.ts";
 
 const decoder = new TextDecoder();
 
@@ -34,6 +35,15 @@ export default (): LoaderPlugin => {
         className: util.isString(meta.id) ? meta.className : undefined,
         style: util.isPlainObject(meta.style) ? meta.style : undefined,
       };
+      const metaData: MetaData = {
+        title: meta.title || "",
+        url: meta.url || "",
+        date: meta.date || new Date(),
+        id: meta.id || "",
+        description: __content.substr(0, 120)
+          .replaceAll("\n", "")
+          .replaceAll("\r", ""),
+      };
 
       if (framework === "react") {
         return {
@@ -47,7 +57,7 @@ export default (): LoaderPlugin => {
             `    html: ${JSON.stringify(html)}`,
             `  })`,
             `}`,
-            `MarkdownPage.meta = ${JSON.stringify(meta)}`,
+            `MarkdownPage.meta = ${JSON.stringify(metaData)}`,
           ].join("\n"),
         };
       }

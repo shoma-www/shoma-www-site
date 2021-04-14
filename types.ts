@@ -3,6 +3,7 @@ export interface MetaData {
   url: string;
   date: Date;
   id: string;
+  description?: string;
 }
 
 export interface ArticleConfig {
@@ -20,6 +21,7 @@ export const isMetadata = (arg: any): arg is MetaData => {
     typeof arg.url === "string" &&
     arg.date instanceof Date &&
     typeof arg.id === "string";
+  // && typeof arg.description === "string";
 };
 
 // deno-lint-ignore no-explicit-any
