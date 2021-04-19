@@ -13,7 +13,8 @@ read title
 
 echo "---" >> $path
 echo "title: $title" >> $path
-echo "url: /articles/$year/$month/$file_name.md" >> $path
+echo "url: /articles/$year/$month/$file_name" >> $path
 echo "date: $date" >> $path
 echo "id: $file_name" >> $path
 echo "---" >> $path
+echo "<!-- more -->" >> $path
