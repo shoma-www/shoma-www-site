@@ -19,4 +19,4 @@ cache-%:
   deno cache https://deno.land/x/aleph@v0.3.0-alpha.${VERSION}/framework/react/mod.ts
 
 blog:
-	./blog_write.sh
+	./scripts/blog_write.sh
