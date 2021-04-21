@@ -7,7 +7,8 @@
 - deno
   - typescript
   - aleph.js
-    - tailwind
+    - tailwind.css
+    - github-markdown.css
     - [Google Fonts](https://fonts.google.com/icons?selected=Material+Icons)
 - GCO
   - firebase hosting
