@@ -4,3 +4,4 @@ Thumbs.db
 dist/
 *.cache
 articleData.ts
+article.rss

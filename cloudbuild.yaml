@@ -2,6 +2,7 @@ steps:
   - name: 'hayd/deno:ubuntu-1.8.3'
     args: [
       'deno', 'run',
+      '--unstable',
       '--allow-read',
       '--allow-write',
       'scripts/createArticleData.ts'

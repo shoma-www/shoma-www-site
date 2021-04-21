@@ -1,4 +1,5 @@
 import React, { ComponentType } from "react";
+import { BASE_URL } from "./constant.ts";
 import "tailwind";
 import "./style/index.css";
 
@@ -54,6 +55,18 @@ export default function App(
           rel="stylesheet"
         />
         <script dangerouslySetInnerHTML={{ __html: gtmScript }} />
+        <link
+          rel="alternate"
+          href={`${BASE_URL}/rss/article.rss`}
+          type="application/rss+xml"
+          title="RSS"
+        />
+        <link
+          rel="alternate"
+          href={`${BASE_URL}/rss/article.rss`}
+          type="application/atom+xml"
+          title="RSS"
+        />
       </head>
       <body>
         <noscript dangerouslySetInnerHTML={{ __html: gtmFrame }} />
