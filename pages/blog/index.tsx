@@ -4,6 +4,7 @@ import { formatDate } from "~/lib/utils.ts";
 import Articles from "~/articleData.ts";
 import Button from "~/components/atoms/button.tsx";
 import ShareButtons from "~/components/organisms/shareButtons.tsx";
+import "github-markdown";
 
 export default function ArticleList() {
   const list = [];
@@ -26,7 +27,7 @@ export default function ArticleList() {
         </a>
         <ShareButtons className="mb-8" url={`${BASE_URL}/blog${url}`} />
         <article
-          className="content entry-content text-base mb-8"
+          className="markdown-body content entry-content text-base mb-8"
           dangerouslySetInnerHTML={{ __html: article.html }}
         />
         <Button href={`/blog${url}`}>

@@ -32,7 +32,7 @@ export default (): LoaderPlugin => {
       const framework = Deno.env.get("ALEPH_FRAMEWORK");
       const props = {
         id: util.isString(meta.id) ? meta.id : undefined,
-        className: util.isString(meta.id) ? meta.className : undefined,
+        className: "markdown-body",
         style: util.isPlainObject(meta.style) ? meta.style : undefined,
       };
       const metaData: MetaData = {
@@ -50,6 +50,7 @@ export default (): LoaderPlugin => {
           code: [
             `import { createElement } from 'https://esm.sh/react'`,
             `import HtmlPage from 'https://deno.land/x/aleph@v0.3.0-alpha.29/framework/react/components/HtmlPage.ts'`,
+            `import 'https://esm.sh/github-markdown-css/github-markdown.css'`,
             `export default function MarkdownPage(props) {`,
             `  return createElement(HtmlPage, {`,
             `    ...${JSON.stringify(props)},`,
