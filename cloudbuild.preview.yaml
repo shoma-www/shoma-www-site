@@ -1,0 +1,20 @@
+steps:
+  - name: 'hayd/deno:ubuntu-1.8.3'
+    args: [
+      'deno', 'run',
+      '--allow-read',
+      '--allow-write',
+      'scripts/createArticleData.ts'
+    ]
+
+  - name: 'hayd/deno:ubuntu-1.8.3'
+    args: [
+      'deno', 'run',
+      '--unstable',
+      '-A',
+      'https://deno.land/x/aleph@v0.3.0-alpha.29/cli.ts',
+      build
+    ]
+
+  - name: 'gcr.io/$PROJECT_ID/firebase'
+    args: ['hosting:channel:deploy', '$BRANCH_NAME']
