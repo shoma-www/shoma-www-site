@@ -13,7 +13,9 @@ export default function Home() {
 
   return (
     <>
-      <head>
+      <head
+        prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# website: http://ogp.me/ns/website#"
+      >
         <title>Shoma's Home</title>
         <meta name="description" content="shoma-wwwのポートフォリオサイト。自己紹介とそのほかつらつら" />
         <meta property="og:url" content={`${BASE_URL}${pathname}`} />

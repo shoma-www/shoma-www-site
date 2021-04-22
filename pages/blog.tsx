@@ -42,7 +42,9 @@ export default function Blog(
   }
   return (
     <>
-      <head>
+      <head
+        prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# article: http://ogp.me/ns/article#"
+      >
         <title>{mTitle}</title>
         <meta name="description" content={mDesctiption} />
         <meta property="og:url" content={mUrl} />
