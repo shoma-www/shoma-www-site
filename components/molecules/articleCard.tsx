@@ -1,6 +1,5 @@
 import React from "react";
 import Card from "~/components/atoms/card.tsx";
-import { formatDate } from "~/lib/utils.ts";
 
 export default function ArticleCard(
   { id, url, date, title, html, className }: {
@@ -16,7 +15,7 @@ export default function ArticleCard(
     <Card key={id} className={className}>
       <a href={`/blog${url}`} className="hover:underline">
         <div>
-          <span className="mr-4">{formatDate(date)}</span>
+          <span className="mr-4">{date}</span>
           <span>{title}</span>
         </div>
         <article

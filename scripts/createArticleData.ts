@@ -60,6 +60,11 @@ for (
     html,
     metaData: meta,
   });
+  meta.dateStr = format(
+    new Date(meta.date.toString()),
+    "yyyy/MM/dd",
+    {},
+  );
   meta.description = html;
 }
 

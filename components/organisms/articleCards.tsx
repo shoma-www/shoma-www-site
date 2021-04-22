@@ -8,12 +8,12 @@ export default function ArticleCards() {
     if (index > 2) {
       break;
     }
-    const { id, date, title, url } = article.metaData;
+    const { id, title, url, dateStr } = article.metaData;
     newArticleList.push(
       <ArticleCard
         id={id}
         url={url}
-        date={date}
+        date={dateStr}
         title={title}
         html={article.html}
         className="mb-8"

@@ -2,6 +2,7 @@ export interface MetaData {
   title: string;
   url: string;
   date: Date;
+  dateStr?: string;
   id: string;
   description?: string;
 }
