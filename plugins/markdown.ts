@@ -1,7 +1,7 @@
-import type { LoaderPlugin } from "https://deno.land/x/aleph@v0.3.0-alpha.29/types.ts";
+import type { LoaderPlugin } from "https://deno.land/x/aleph@v0.3.0-alpha.31/types.ts";
 import marked from "https://esm.sh/marked@2.0.1";
 import { safeLoadFront } from "https://esm.sh/yaml-front-matter@4.1.1";
-import util from "https://deno.land/x/aleph@v0.3.0-alpha.29/shared/util.ts";
+import util from "https://deno.land/x/aleph@v0.3.0-alpha.31/shared/util.ts";
 import { MetaData } from "../types.ts";
 
 const decoder = new TextDecoder();
@@ -49,7 +49,7 @@ export default (): LoaderPlugin => {
         return {
           code: [
             `import { createElement } from 'https://esm.sh/react'`,
-            `import HtmlPage from 'https://deno.land/x/aleph@v0.3.0-alpha.29/framework/react/components/HtmlPage.ts'`,
+            `import HtmlPage from 'https://deno.land/x/aleph@v0.3.0-alpha.31/framework/react/components/HtmlPage.ts'`,
             `import 'https://esm.sh/github-markdown-css/github-markdown.css'`,
             `export default function MarkdownPage(props) {`,
             `  return createElement(HtmlPage, {`,
