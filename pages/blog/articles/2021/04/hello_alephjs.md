@@ -1,5 +1,5 @@
 ---
-title: 初めてのAleph.js
+title: [Deno]初めてのAleph.js
 url: /articles/2021/04/hello_alephjs
 date: 2021-04-21
 id: hello_aleph
